@@ -1,0 +1,18 @@
+h2 {
+  margin: 1em;
+}
+
+.orders {
+  width: 80%;
+  margin: 1em;
+}
+
+.orders table {
+  width: 100%;
+}
+
+button {
+  float: right;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+}
