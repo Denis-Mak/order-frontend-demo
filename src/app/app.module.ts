@@ -5,13 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from "@angular/material/table";
+import { MatTableModule } from '@angular/material/table';
 import { OrderFormComponent } from './order-form/order-form.component';
-import { MatButtonModule } from "@angular/material/button";
-import { MatDialogModule } from "@angular/material/dialog";
-import { MatInputModule } from "@angular/material/input";
-import { A11yModule } from "@angular/cdk/a11y";
-import { FormsModule } from "@angular/forms";
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { A11yModule } from '@angular/cdk/a11y';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormsModule } from "@angular/forms";
     FormsModule,
     AppRoutingModule,
     NoopAnimationsModule,
+    HttpClientModule,
     MatTableModule,
     MatButtonModule,
     MatDialogModule,

@@ -1,0 +1,33 @@
+{
+  "expression": "/api/orders",
+  "method": "POST",
+  "isArray": false,
+  "responses": {
+    "Orders sample": {
+      "default": true,
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "data":
+        {
+          "id": 3,
+          "product": "Chalk",
+          "customer": "Kooli OÜ"
+        },
+      "delay": 0
+    },
+    "error": {
+      "default": true,
+      "status": 500,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "data": [],
+      "delay": 0
+    },
+    "some-other-meaningful-scenario-name": {
+      "data": {}
+    }
+  }
+}

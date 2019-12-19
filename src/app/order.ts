@@ -1,5 +1,5 @@
 export class Order {
-    id: number;
+    id?: number;
     product?: string;
     customer?: string;
 }

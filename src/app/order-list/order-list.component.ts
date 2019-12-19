@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Order } from "../order";
-import { OrderMocks } from "../testing/order-mocks";
-import { MatDialog } from "@angular/material/dialog";
-import { OrderFormComponent } from "../order-form/order-form.component";
-import { MatTable } from "@angular/material/table";
+import { Order } from '../order';
+import { MatDialog } from '@angular/material/dialog';
+import { OrderFormComponent } from '../order-form/order-form.component';
+import { MatTable } from '@angular/material/table';
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-order-list',
@@ -16,11 +16,14 @@ export class OrderListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'product', 'customer'];
 
   constructor(
-    public dialog: MatDialog
-  ) {}
+    public dialog: MatDialog,
+    private orderService: OrderService
+  ) {
+  }
 
   ngOnInit() {
-    this.orders = OrderMocks.ORDERS;
+    this.orderService.getOrders()
+      .subscribe(orders => this.orders = orders);
   }
 
   createOrder(): void {
@@ -30,8 +33,11 @@ export class OrderListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.orders.push({ id:100, product: result.product, customer: result.customer });
-      this.table.renderRows();
+      this.orderService.createOrder({product: result.product, customer: result.customer})
+        .subscribe(order => {
+          this.orders.push(order);
+          this.table.renderRows();
+        });
     });
   }
 

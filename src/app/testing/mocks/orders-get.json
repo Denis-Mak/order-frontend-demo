@@ -1,0 +1,48 @@
+{
+  "expression": "/api/orders",
+  "method": "GET",
+  "isArray": true,
+  "responses": {
+    "Orders sample": {
+      "default": true,
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "data": [
+        {
+          "id": 1,
+          "product": "Pen",
+          "customer": "Kooli OÜ"
+        },
+        {
+          "id": 2,
+          "product": "Ruler",
+          "customer": "Kooli OÜ"
+        }
+      ],
+      "delay": 0
+    },
+    "empty response": {
+      "default": true,
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "data": [],
+      "delay": 0
+    },
+    "error": {
+      "default": true,
+      "status": 500,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "data": [],
+      "delay": 0
+    },
+    "some-other-meaningful-scenario-name": {
+      "data": {}
+    }
+  }
+}
